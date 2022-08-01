@@ -25,6 +25,7 @@ Things you may want to cover:
 
 # usersテーブル
 | Column             | Type    | options                   |
+| ------------------ | ------- | ------------------------- |
 | nickname           | string  | null: false               |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
@@ -33,3 +34,21 @@ Things you may want to cover:
 ## Association
 - has_many :mouses
 - has_many :reviews
+
+# mousesテーブル
+| Column             | Type        | options                        |
+| -----------------  | ----------- | ------------------------------ |
+| name               | string      | null: false                    |
+| maker_id           | integar     | null: false                    |
+| connection_id      | integar     | null: false                    |
+| symmetry_id        | integar     | null: false                    |
+| weight             | string      | null: false                    |
+| dpi                | string      | null: false                    |
+| software_id        | integar     | null: false                    |
+| software_url       | text        |                                |
+| order_url          | text        | null: false                    |
+| user_id            | references  | null: false, foreign_key: true |
+
+## Association
+- belongs_to :user
+- has_many :mouse_reviews
