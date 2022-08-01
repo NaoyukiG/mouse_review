@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# usersテーブル
+| Column             | Type    | options                   |
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| admin              | boolean | default: false            |
+
+## Association
+- has_many :mouses
+- has_many :reviews
