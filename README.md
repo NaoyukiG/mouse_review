@@ -65,3 +65,13 @@ Things you may want to cover:
 ## Association
 - belongs_to :user
 - has_many :mouse_reviews
+
+# mouse_reviewsテーブル
+| Column               | Type        | options                        |
+| -------------------  | ----------- | ------------------------------ |
+| mouse_id             | references  | null: false, foreign_key: true |
+| review_id            | references  | null: false, foreign_key: true |
+
+## Association
+- belongs_to :mouse
+- belongs_to :review
