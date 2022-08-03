@@ -4,5 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, presence: true
+  with_options presence: true do
+  validates :nickname
+  validates :password, format: {with: /\A[a-z0-9]+\z/i, message:"is invalid. Input half-width characters."}, allow_blank: true
+  end
 end
