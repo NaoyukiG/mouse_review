@@ -1,0 +1,2 @@
+class MousesController < ApplicationController
+end
