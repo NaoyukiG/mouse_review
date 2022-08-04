@@ -86,6 +86,12 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters.")
       end
+
+      it 'adminの値がtrueの場合、保存ができない' do
+        @user.admin = true
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Admin is invalid value entered")
+      end
     end
   end
 end
