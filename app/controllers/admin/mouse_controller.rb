@@ -3,6 +3,7 @@ class Admin::MouseController < ApplicationController
 
   def new
     @mouse = Mouse.new
+  end
 
   private
 

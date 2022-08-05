@@ -1,6 +1,6 @@
 class CreateMice < ActiveRecord::Migration[6.0]
   def change
-    create_table :mouses do |t|
+    create_table :mice do |t|
 
       t.string :name,           null: false
       t.integer :maker_id,      null: false

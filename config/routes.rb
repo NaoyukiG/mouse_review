@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :mouses, only: [:index]
 
   namespace :admin do
-    resources :mouses, only: [:new, :create]
+    resources :mouse, only: [:new, :create]
   end
 end
