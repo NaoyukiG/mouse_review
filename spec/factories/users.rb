@@ -4,6 +4,7 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { Faker::Internet.password(min_length: 6)}
     password_confirmation { password }
+    hand_size { 20 }
     admin { Faker::Boolean.boolean(true_ratio: 0.0) }
   end
 end

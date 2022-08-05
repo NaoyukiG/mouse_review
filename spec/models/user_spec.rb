@@ -7,7 +7,12 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context '新規登録ができる場合' do
-      it 'nickname, email, password, password_confirmationが存在する場合、保存ができる' do
+      it 'nickname, email, password, password_confirmation、hand_sizeが存在する場合、保存ができる' do
+        expect(@user).to be_valid
+      end
+
+      it 'nickname, email, password, password_confirmationが存在し、hand_sizeが空の場合、保存ができる' do
+        @user.hand_size = ''
         expect(@user).to be_valid
       end
     end
