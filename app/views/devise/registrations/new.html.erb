@@ -9,6 +9,12 @@
   </div>
 
   <div class="field">
+    <% f.label :hand_size %>手の大きさ<br />
+    ※中指の先端から手の甲と手首の間までの長さ<br />
+    <%= f.number_field :hand_size, min: 10, max: 100, autocomplete: "10" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
