@@ -1,6 +1,11 @@
 <header>
 <div class='logo' >ロゴ</div>
   <div class='login_tag'>
+    <div class="mouse_form">
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to 'マウス投稿ページ' %>
+      <% end %>
+    </div>
     <% if user_signed_in? %>
       <%= "#{current_user.nickname}がログイン中です" %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
