@@ -3,7 +3,7 @@
   <%= link_to 'ロゴ', root_path %>
   </div>
   <div class='login_tag'>
-    <div class="mouse_form">
+    <div class="mouse-form-page">
       <% if user_signed_in? && current_user.admin? %>
         <%= link_to 'マウス投稿ページ', new_admin_mouse_path %>
       <% end %>

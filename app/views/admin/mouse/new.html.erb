@@ -1,3 +1,22 @@
 <%= render 'share/header' %>
 
 <h1>マウスを投稿するページです</h1>
+
+<div class="mouse-form"> 
+  <%= form_with model: @mouce, local: true do |f|%>
+  <h2> マウスの投稿フォーム</h2>
+  <div class="">
+      <div class="weight-bold-text">
+        マウスの名前
+        <span class="require-text">必須</span>
+      </div>
+      <%= f.text_area :name, class:"mouse-name", placeholder:"マウスの名前", maxlength:"40" %>
+  </div>
+
+  <div class="">
+      <div class="weight-bold-text">
+      </div>
+    <%= f.submit '投稿する' %>
+  </div>
+  <% end %>
+</div>
