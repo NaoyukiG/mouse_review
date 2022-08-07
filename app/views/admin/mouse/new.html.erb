@@ -41,7 +41,7 @@
         <span class="require-text">必須</span>
       </div>
   </div>
-  <%= f.text_area :connection_id, class:"mouse-connection" %>
+  <%= f.collection_select(:connection_id, Connection.all, :id, :name, {}, {class:"mouse-connection"}) %>
 
   <div class="mouse-summery">
       <div class="weight-bold-text">
