@@ -33,7 +33,7 @@
         <span class="require-text">必須</span>
       </div>
   </div>
-  <%= f.text_area :maker_id, class:"mouse-maker" %>
+  <%= f.collection_select(:maker_id, Maker.all, :id, :name, {}, {class:"mouse-maker"}) %>
 
   <div class="mouse-summery">
       <div class="weight-bold-text">
