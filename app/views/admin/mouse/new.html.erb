@@ -5,13 +5,91 @@
 <div class="mouse-form"> 
   <%= form_with model: @mouce, local: true do |f|%>
   <h2> マウスの投稿フォーム</h2>
-  <div class="">
+
+  <div class="img-upload">
+      <div class="weight-bold-text">
+        商品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"mouse-image" %>
+      </div>
+  </div>
+
+  <div class="mouse-summery">
       <div class="weight-bold-text">
         マウスの名前
         <span class="require-text">必須</span>
       </div>
-      <%= f.text_area :name, class:"mouse-name", placeholder:"マウスの名前", maxlength:"40" %>
   </div>
+  <%= f.text_area :name, class:"mouse-name", placeholder:"マウスの名前", maxlength:"40" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        メーカー
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :maker_id, class:"mouse-maker" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        接続方式
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :connection_id, class:"mouse-connection" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        対称性
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :symmetry_id, class:"mouse-symmetry" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        重さ
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :size, class:"mouse-size" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        dpi
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :dpi, class:"mouse-dpi" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        設定ドライバーの有無
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :software_id, class:"mouse-software-id" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        設定ドライバーのURL
+        <span class="require-text">任意</span>
+      </div>
+  </div>
+  <%= f.text_area :software_url, class:"mouse-software-url" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        購入サイトのURL
+        <span class="require-text">任意</span>
+      </div>
+  </div>
+  <%= f.text_area :order_url, class:"mouse-order-url" %>
 
   <div class="">
       <div class="weight-bold-text">
