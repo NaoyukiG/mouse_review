@@ -49,7 +49,7 @@
         <span class="require-text">必須</span>
       </div>
   </div>
-  <%= f.text_area :symmetry_id, class:"mouse-symmetry" %>
+  <%= f.collection_select(:symmetry_id, Symmetry.all, :id, :name, {}, {class:"mouse-symmetry"}) %>
 
   <div class="mouse-summery">
       <div class="weight-bold-text">
@@ -57,7 +57,7 @@
         <span class="require-text">必須</span>
       </div>
   </div>
-  <%= f.text_area :size, class:"mouse-size" %>
+  <%= f.text_area :weight, placeholder:"マウスの重さ", class:"mouse-size" %>
 
   <div class="mouse-summery">
       <div class="weight-bold-text">
@@ -65,7 +65,7 @@
         <span class="require-text">必須</span>
       </div>
   </div>
-  <%= f.text_area :dpi, class:"mouse-dpi" %>
+  <%= f.text_area :dpi, placeholder:"dpiの設定範囲", class:"mouse-dpi" %>
 
   <div class="mouse-summery">
       <div class="weight-bold-text">
@@ -73,7 +73,7 @@
         <span class="require-text">必須</span>
       </div>
   </div>
-  <%= f.text_area :software_id, class:"mouse-software-id" %>
+  <%= f.collection_select(:software_id, Software.all, :id, :name, {}, {class:"mouse-software-id"}) %>
 
   <div class="mouse-summery">
       <div class="weight-bold-text">
@@ -81,7 +81,7 @@
         <span class="require-text">任意</span>
       </div>
   </div>
-  <%= f.text_area :software_url, class:"mouse-software-url" %>
+  <%= f.text_area :software_url, placeholder:"ドライバーのURL", class:"mouse-software-url" %>
 
   <div class="mouse-summery">
       <div class="weight-bold-text">
@@ -89,7 +89,7 @@
         <span class="require-text">任意</span>
       </div>
   </div>
-  <%= f.text_area :order_url, class:"mouse-order-url" %>
+  <%= f.text_area :order_url, placeholder:"購入サイトのURL", class:"mouse-order-url" %>
 
   <div class="">
       <div class="weight-bold-text">
