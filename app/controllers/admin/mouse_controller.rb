@@ -1,4 +1,5 @@
 class Admin::MouseController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :if_not_admin
 
   def new
@@ -16,7 +17,6 @@ class Admin::MouseController < ApplicationController
   end
 
   private
-
   def if_not_admin
     redirect_to root_path unless current_user.admin?
   end
