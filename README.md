@@ -35,7 +35,7 @@ Things you may want to cover:
 - has_many :mouses
 - has_many :reviews
 
-# mousesテーブル
+# miceテーブル
 | Column             | Type        | options                        |
 | -----------------  | ----------- | ------------------------------ |
 | name               | string      | null: false                    |

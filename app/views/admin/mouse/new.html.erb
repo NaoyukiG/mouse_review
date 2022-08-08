@@ -1,0 +1,102 @@
+<%= render 'share/header' %>
+
+<h1>マウスを投稿するページです</h1>
+
+<div class="mouse-form"> 
+  <%= form_with model: @mouse, url: admin_mouse_index_path, local: true do |f|%>
+  <h2> マウスの投稿フォーム</h2>
+
+  <%= render 'share/error_messages', model: @mouse, collection: @messages %>
+
+  <div class="img-upload">
+      <div class="weight-bold-text">
+        マウス画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"mouse-image" %>
+      </div>
+  </div>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        マウスの名前
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :name, class:"mouse-name", placeholder:"マウスの名前", maxlength:"40" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        メーカー
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.collection_select(:maker_id, Maker.all, :id, :name, {}, {class:"mouse-maker"}) %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        接続方式
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.collection_select(:connection_id, Connection.all, :id, :name, {}, {class:"mouse-connection"}) %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        対称性
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.collection_select(:symmetry_id, Symmetry.all, :id, :name, {}, {class:"mouse-symmetry"}) %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        重さ
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :weight, placeholder:"マウスの重さ", class:"mouse-size" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        dpi
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.text_area :dpi, placeholder:"dpiの設定範囲", class:"mouse-dpi" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        設定ドライバーの有無
+        <span class="require-text">必須</span>
+      </div>
+  </div>
+  <%= f.collection_select(:software_id, Software.all, :id, :name, {}, {class:"mouse-software-id"}) %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        設定ドライバーのURL
+        <span class="require-text">任意</span>
+      </div>
+  </div>
+  <%= f.text_area :software_url, placeholder:"ドライバーのURL", class:"mouse-software-url" %>
+
+  <div class="mouse-summery">
+      <div class="weight-bold-text">
+        購入サイトのURL
+        <span class="require-text">任意</span>
+      </div>
+  </div>
+  <%= f.text_area :order_url, placeholder:"購入サイトのURL", class:"mouse-order-url" %>
+
+  <div class="">
+      <div class="weight-bold-text">
+      </div>
+    <%= f.submit '投稿する' %>
+  </div>
+  <% end %>
+</div>
