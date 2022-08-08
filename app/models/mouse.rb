@@ -4,6 +4,7 @@ class Mouse < ApplicationRecord
   belongs_to :Connection
   belongs_to :Symmetry
   belongs_to :Software
+  has_one_attached :image
 
   with_options presence: true do
     validates :name

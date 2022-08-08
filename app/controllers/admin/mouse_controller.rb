@@ -22,6 +22,6 @@ class Admin::MouseController < ApplicationController
   end
 
   def mouse_params
-    params.require(:mouse).permit(:name, :maker_id, :connection_id, :symmetry_id, :wight, :dpi, :software_id, :software_url, :order_url).merge(user_id: current_user.id)
+    params.require(:mouse).permit(:name, :maker_id, :connection_id, :symmetry_id, :wight, :dpi, :software_id, :software_url, :order_url, :image).merge(user_id: current_user.id)
   end
 end
