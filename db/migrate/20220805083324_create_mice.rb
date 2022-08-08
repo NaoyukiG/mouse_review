@@ -7,7 +7,7 @@ class CreateMice < ActiveRecord::Migration[6.0]
       t.integer :connection_id, null: false
       t.integer :symmetry_id,   null: false
       t.string :weight,         null: false
-      t.string :string,         null: false
+      t.string :dpi,            null: false
       t.integer :software_id,   null: false
       t.text :software_url
       t.text :order_url,        null: false

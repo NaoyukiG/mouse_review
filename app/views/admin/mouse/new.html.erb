@@ -3,8 +3,10 @@
 <h1>マウスを投稿するページです</h1>
 
 <div class="mouse-form"> 
-  <%= form_with model: @mouce, local: true do |f|%>
+  <%= form_with model: @mouse, url: admin_mouse_index_path, local: true do |f|%>
   <h2> マウスの投稿フォーム</h2>
+
+  <%= render 'share/error_messages', model: @mouse, collection: @messages %>
 
   <div class="img-upload">
       <div class="weight-bold-text">

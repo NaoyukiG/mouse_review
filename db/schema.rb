@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2022_08_08_073128) do
     t.integer "connection_id", null: false
     t.integer "symmetry_id", null: false
     t.string "weight", null: false
-    t.string "string", null: false
+    t.string "dpi", null: false
     t.integer "software_id", null: false
     t.text "software_url"
     t.text "order_url", null: false
