@@ -1,3 +1,25 @@
 <%= render 'share/header' %>
 
 <h1>マウスを表示するページです</h1>
+
+<div class="mice">
+  <ul>マウス一覧
+    <% @mice.each do |mouse| %>
+      <li>
+        <%= link_to  '#' do %>
+          <div class="mouse-detail">
+            <%= image_tag mouse.image.variant(resize: '300x200'), class:"image_tag" %>
+          </div>
+
+          <div class="mouse-detail">
+            <td><%= mouse.name %></td>
+          </div>
+
+          <div class="mouse-detail">
+            <td><%= mouse.maker.name %></td>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
