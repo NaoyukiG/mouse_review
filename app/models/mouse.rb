@@ -1,19 +1,23 @@
 class Mouse < ApplicationRecord
-  belongs_to :user
-  belongs_to :Maker
-  belongs_to :Connection
-  belongs_to :Symmetry
-  belongs_to :Software
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :maker
+  belongs_to :connection
+  belongs_to :symmetry
+  belongs_to :software
   has_one_attached :image
+  belongs_to :user
 
   with_options presence: true do
     validates :name
-    validates :maker_id, numericality: {other_than: 1, message: "can't be blank"}
-    validates :connection_id, numericality: {other_than: 1, message: "can't be blank"}, allow_blank: true
-    validates :symmetry_id, numericality: {other_than: 1, message: "can't be blank"}, allow_blank: true
     validates :weight
     validates :dpi
-    validates :software_id, numericality: {other_than: 1, message: "can't be blank"}, allow_blank: true
     validates :order_url
+  end
+
+  with_options presence: true,  numericality: {other_than: 1, message: "can't be blank"} do
+    validates :maker_id
+    validates :connection_id
+    validates :symmetry_id
+    validates :software_id
   end
 end
