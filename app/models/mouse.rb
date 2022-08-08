@@ -10,6 +10,9 @@ class Mouse < ApplicationRecord
     validates :maker_id, numericality: {other_than: 1, message: "can't be blank"}
     validates :connection_id, numericality: {other_than: 1, message: "can't be blank"}, allow_blank: true
     validates :symmetry_id, numericality: {other_than: 1, message: "can't be blank"}, allow_blank: true
-    validates :symmetry_id, numericality: {other_than: 1, message: "can't be blank"}, allow_blank: true
+    validates :weight
+    validates :dpi
+    validates :software_id, numericality: {other_than: 1, message: "can't be blank"}, allow_blank: true
+    validates :order_url
   end
 end
