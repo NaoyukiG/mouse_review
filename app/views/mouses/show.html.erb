@@ -55,8 +55,32 @@
 </div>
 
 <div class="review-form">
-  <h2>マウスレビューの投稿
+  <h2>マウスレビューの投稿</h2>
   <%= form_with model: @review, url: reviews_path, local: true do |f|%>
+
+    <div class="review-summery">
+      <div class="weight-bold-text">
+        握り方
+        <span class="require-text">必須</span>
+      </div>
+    </div>
+    <%= f.collection_select(:grip_type_id, GripType.all, :id, :name, {}, {class:"mouse-grip"}) %>
+
+    <div class="review-summery">
+      <div class="weight-bold-text">
+        使用したゲーム
+        <span class="require-text">必須</span>
+      </div>
+    </div>
+    <%= f.collection_select(:play_game_id, PlayGame.all, :id, :name, {}, {class:"mouse-playgame"}) %>
+
+    <div class="review-summery">
+      <div class="weight-bold-text">
+        使用感
+        <span class="require-text">必須</span>
+      </div>
+    </div>
     <%= f.text_area :usability, placeholder: "使った感想" %>
+    
   <% end%>
 </div>
