@@ -1,6 +1,6 @@
 <%= render 'share/header' %>
 
-<h1>マウスの詳細情報のページ</h1>
+<h1> <%=@mouse.name%>  のページ</h1>
 
 <div class="mice">
   <h2>マウス概要</h2>
@@ -46,10 +46,17 @@
           </div>
         </div>
 </div>
-<div class="mouse-edit">
+
+<div class="mouse-editer">
   <% if user_signed_in? && current_user.admin?%>
     <%= link_to '編集する', edit_admin_mouse_path(@mouse.id), method: :get, class: "edit-btn"%>
     <%= link_to '削除する', admin_mouse_path(@mouse.id), method: :delete, class: "delete-btn" %>
   <% end %>
-  
+</div>
+
+<div class="review-form">
+  <h2>マウスレビューの投稿
+  <%= form_with model: @review, url: reviews_path, local: true do |f|%>
+    <%= f.text_area :usability, placeholder: "使った感想" %>
+  <% end%>
 </div>
