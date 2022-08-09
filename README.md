@@ -39,12 +39,12 @@ Things you may want to cover:
 | Column             | Type        | options                        |
 | -----------------  | ----------- | ------------------------------ |
 | name               | string      | null: false                    |
-| maker_id           | integar     | null: false                    |
-| connection_id      | integar     | null: false                    |
-| symmetry_id        | integar     | null: false                    |
+| maker_id           | integer     | null: false                    |
+| connection_id      | integer     | null: false                    |
+| symmetry_id        | integer     | null: false                    |
 | weight             | string      | null: false                    |
 | dpi                | string      | null: false                    |
-| software_id        | integar     | null: false                    |
+| software_id        | integer     | null: false                    |
 | software_url       | text        |                                |
 | order_url          | text        | null: false                    |
 | user_id            | references  | null: false, foreign_key: true |
@@ -56,9 +56,9 @@ Things you may want to cover:
 # reviewsテーブル
 | Column             | Type        | options                        |
 | -----------------  | ----------- | ------------------------------ |
-| grip_type          | string      | null: false                    |
-| play_game_id       | integar     | null: false                    |
-| rating             | integar     | null: false, default: 0        |
+| grip_type_id       | integer     | null: false                    |
+| play_game_id       | integer     | null: false                    |
+| rating             | integer     | null: false, default: 0        |
 | usability          | text        | null: false                    |
 | user_id            | references  | null: false, foreign_key: true |
 
