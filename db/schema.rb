@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_09_094141) do
+ActiveRecord::Schema.define(version: 2022_08_09_140509) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2022_08_09_094141) do
     t.index ["user_id"], name: "index_mice_on_user_id"
   end
 
+  create_table "review_mouses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "mouse_id", null: false
+    t.bigint "review_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mouse_id"], name: "index_review_mouses_on_mouse_id"
+    t.index ["review_id"], name: "index_review_mouses_on_review_id"
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "grip_type_id", null: false
     t.integer "play_game_id", null: false
@@ -77,5 +86,7 @@ ActiveRecord::Schema.define(version: 2022_08_09_094141) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "mice", "users"
+  add_foreign_key "review_mouses", "mice"
+  add_foreign_key "review_mouses", "reviews"
   add_foreign_key "reviews", "users"
 end

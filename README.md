@@ -51,7 +51,7 @@ Things you may want to cover:
 
 ## Association
 - belongs_to :user
-- has_many :mouse_reviews
+- has_many :review_mouses
 
 # reviewsテーブル
 | Column             | Type        | options                        |
@@ -64,9 +64,9 @@ Things you may want to cover:
 
 ## Association
 - belongs_to :user
-- has_many :mouse_reviews
+- has_many :review_mouses
 
-# mouse_reviewsテーブル
+# review_mousesテーブル
 | Column               | Type        | options                        |
 | -------------------  | ----------- | ------------------------------ |
 | mouse_id             | references  | null: false, foreign_key: true |

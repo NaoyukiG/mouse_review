@@ -6,6 +6,8 @@ class Mouse < ApplicationRecord
   belongs_to :software
   has_one_attached :image
   belongs_to :user
+  has_many :review_mouses
+  has_many :reviews, through: :review_mouses
 
   with_options presence: true do
     validates :name
