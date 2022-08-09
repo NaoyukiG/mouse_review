@@ -1,10 +1,10 @@
 <%= render 'share/header' %>
 
-<h1>マウスを投稿するページです</h1>
+<h1>マウスを編集するページです</h1>
 
-<h2> マウスの投稿フォーム</h2>
+<h2> マウスの編集フォーム</h2>
 <div class="mouse-form"> 
-  <%= form_with model: @mouse, url: admin_mouse_index_path, local: true do |f|%>
+  <%= form_with model: @mouse, url: admin_mouse_path(@mouse.id), local: true do |f|%>
 
   <%= render 'share/error_messages', model: @mouse, collection: @messages %>
 
@@ -96,7 +96,8 @@
   <div class="">
       <div class="weight-bold-text">
       </div>
-    <%= f.submit '投稿する' %>
+    <%= f.submit '変更する', class: "change-btn"%>
+    <%= link_to '戻る', mouse_path(@mouse.id), class:"return-btn"%>
   </div>
   <% end %>
 </div>
