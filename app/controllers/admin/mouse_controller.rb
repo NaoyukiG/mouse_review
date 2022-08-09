@@ -1,5 +1,5 @@
 class Admin::MouseController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :if_not_admin
 
   def new
@@ -30,6 +30,13 @@ class Admin::MouseController < ApplicationController
   end
 
   def destroy
+    mouse = Mouse.find(params[:id])
+    if current_user.id == mouse.user_id
+      mouse.destroy
+      redirect_to root_path
+    else
+      render template: "mouses/show"
+    end
   end
 
   private
