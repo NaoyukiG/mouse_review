@@ -6,7 +6,7 @@
   <ul>マウス一覧
     <% @mice.each do |mouse| %>
       <li>
-        <%= link_to  '#' do %>
+        <%= link_to  mouse_path(mouse.id) do %>
           <div class="mouse-detail">
             <%= image_tag mouse.image.variant(resize: '300x200'), class:"image_tag" %>
           </div>

@@ -1,0 +1,55 @@
+<%= render 'share/header' %>
+
+<h1>マウスの詳細情報のページ</h1>
+
+<div class="mice">
+  <h2>マウス概要</h2>
+      
+        <div class="mouse-detail-image">
+          <%= image_tag @mouse.image.variant(resize: '300x200'), class:"image_tag" %>
+        </div>
+        <div class="mouse-info-boxtable">
+          <div class="mouse-detail">
+            <td>マウスの名前：<%= @mouse.name %></td>
+          </div>
+
+          <div class="mouse-detail">
+            <td>メーカー名：<%= @mouse.maker.name %></td>
+          </div>
+
+          <div class="mouse-detail">
+            <td>接続方式：<%= @mouse.connection.name %></td>
+          </div>
+
+          <div class="mouse-detail">
+            <td>形状：<%= @mouse.symmetry.name %></td>
+          </div>
+
+          <div class="mouse-detail">
+            <td>重さ：<%= @mouse.weight %>g</td>
+          </div>
+
+          <div class="mouse-detail">
+            <td>dpi：<%= @mouse.dpi %>dpi</td>
+          </div>
+
+          <div class="mouse-detail">
+            <td>設定ソフトウェアの有無：<%= @mouse.software.name %></td>
+          </div>
+
+          <div class="mouse-detail">
+            <td>設定ソフトウェアのURL：<%= @mouse.software_url %></td>
+          </div>
+
+          <div class="mouse-detail">
+            <td>購入サイトのURL：<%= @mouse.order_url %></td>
+          </div>
+        </div>
+</div>
+<div class="mouse-edit">
+  <% if user_signed_in? && current_user.admin?%>
+    <%= link_to '編集する', url: edit_admin_mouse_path(@mouse.id), method: :get %>
+          
+  <% end %>
+  
+</div>
