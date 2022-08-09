@@ -8,4 +8,9 @@ class Review < ApplicationRecord
     validates :grip_type_id
     validates :play_game_id
   end
+
+  with_options presence: true do
+    validates :rating, format: { with: /\A[1-5]\z/, message: "is invalid. Input number from 1 to 5 in half-width.", allow_blank: true }
+    validates :usability
+  end
 end
