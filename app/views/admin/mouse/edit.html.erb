@@ -3,7 +3,7 @@
 <h1>マウスを編集するページです</h1>
 
 <div class="mouse-form"> 
-  <%= form_with model: @mouse,local: true do |f|%>
+  <%= form_with model: @mouse, url: admin_mouse_path(@mouse.id), local: true do |f|%>
 
   <%= render 'share/error_messages', model: @mouse, collection: @messages %>
 

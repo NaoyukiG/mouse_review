@@ -20,10 +20,16 @@ class Admin::MouseController < ApplicationController
     @mouse = Mouse.find(params[:id])
   end
 
-  def destroy
+  def update
+    @mouse = Mouse.find(params[:id])
+    if @mouse.update(mouse_params)
+      redirect_to mouse_path(@mouse.id)
+    else
+      render :edit
+    end
   end
 
-  def update
+  def destroy
   end
 
   private
