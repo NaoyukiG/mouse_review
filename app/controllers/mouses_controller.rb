@@ -5,5 +5,8 @@ class MousesController < ApplicationController
     @mice = Mouse.includes(:user).order("created_at DESC")
   end
   
+  def show
+
+  end
   
 end
