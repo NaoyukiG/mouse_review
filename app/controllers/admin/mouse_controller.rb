@@ -1,5 +1,5 @@
 class Admin::MouseController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   before_action :if_not_admin
 
   def new
@@ -17,6 +17,10 @@ class Admin::MouseController < ApplicationController
   end
 
   def edit
+    @mouse = Mouse.find(params[:id])
+  end
+
+  def destroy
 
   end
 

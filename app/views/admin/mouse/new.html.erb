@@ -2,9 +2,9 @@
 
 <h1>マウスを投稿するページです</h1>
 
+<h2> マウスの投稿フォーム</h2>
 <div class="mouse-form"> 
   <%= form_with model: @mouse, url: admin_mouse_index_path, local: true do |f|%>
-  <h2> マウスの投稿フォーム</h2>
 
   <%= render 'share/error_messages', model: @mouse, collection: @messages %>
 
