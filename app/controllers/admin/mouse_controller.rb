@@ -1,5 +1,5 @@
 class Admin::MouseController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :if_not_admin
 
   def new
@@ -14,6 +14,10 @@ class Admin::MouseController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+
   end
 
   private

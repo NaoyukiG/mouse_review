@@ -45,5 +45,11 @@
             <td>購入サイトのURL：<%= @mouse.order_url %></td>
           </div>
         </div>
+</div>
+<div class="mouse-edit">
+  <% if user_signed_in? && current_user.admin?%>
+    <%= link_to '編集する', url: edit_admin_mouse_path(@mouse.id), method: :get %>
+          
+  <% end %>
   
 </div>
