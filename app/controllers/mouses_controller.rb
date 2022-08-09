@@ -6,7 +6,7 @@ class MousesController < ApplicationController
   end
   
   def show
-
+    @mouse = Mouse.find(params[:id])
   end
   
 end
