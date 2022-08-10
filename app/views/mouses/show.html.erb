@@ -60,8 +60,30 @@
     <ul>
       <% @reviews.each do |review|%>
       <li>
-        
-        <%= review.usability %>
+        <div class="mouse-posted-review">
+          <%= review.user[:user_id] %>
+        </div>
+        <div class="mouse-posted-review">
+          <%= review.rating %>点
+        </div>
+        <div class="mouse-posted-review">
+          <div class="weight-bold-text">
+          握り方：<%= review.grip_type.name %>
+          </div>
+          
+        </div>
+        <div class="mouse-posted-review">
+          <div class="weight-bold-text">
+          使用したゲーム：<%= review.play_game.name %>
+          </div>
+          
+        </div>
+        <div class="mouse-posted-review">
+          <div class="weight-bold-text">
+          感想：
+          </div>
+          <%= review.usability %>
+        </div>
       <li>
       <% end %>
     </ul>
