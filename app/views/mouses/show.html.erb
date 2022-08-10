@@ -68,6 +68,10 @@
           <%= review.rating %>点
         </div>
 
+        <% if user_signed_in? && current_user.id == review.user_id%>
+          <%= link_to '削除する', review_path(review.id, mouse_id: @mouse.id), method: :delete, class: "delete-btn"%>
+        <% end%>
+
         <div class="mouse-posted-review">
           <div class="weight-bold-text">
           握り方：<%= review.grip_type.name %>

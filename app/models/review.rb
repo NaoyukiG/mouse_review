@@ -4,7 +4,7 @@ class Review < ApplicationRecord
   belongs_to :play_game
   
   belongs_to :user
-  has_many :review_mouses
+  has_many :review_mouses, dependent: :destroy
   has_many :mouses, through: :review_mouses
 
   
