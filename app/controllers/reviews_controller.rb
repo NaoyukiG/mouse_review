@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     review = Review.find(params[:id])
     if current_user.id == review.user_id
       review.destroy
-      redirect_to 
+      redirect_to mouse_path(params[:mouse_id])
     else
       render template: "mouses/show"
     end
