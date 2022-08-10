@@ -1,6 +1,6 @@
 <%= render 'share/header' %>
 
-<h1>マウスの詳細情報のページ</h1>
+<h1> <%=@mouse.name%>  のページ</h1>
 
 <div class="mice">
   <h2>マウス概要</h2>
@@ -46,10 +46,56 @@
           </div>
         </div>
 </div>
-<div class="mouse-edit">
+
+<div class="mouse-editer">
   <% if user_signed_in? && current_user.admin?%>
     <%= link_to '編集する', edit_admin_mouse_path(@mouse.id), method: :get, class: "edit-btn"%>
     <%= link_to '削除する', admin_mouse_path(@mouse.id), method: :delete, class: "delete-btn" %>
   <% end %>
-  
+</div>
+
+<div class="review-form">
+<%if user_signed_in? && current_user.admin == false %>
+  <h2>マウスレビューの投稿</h2>
+  <%= form_with model: @mouse_mid, url: reviews_path, local: true do |f|%>
+
+    <div class="review-summery">
+      <div class="weight-bold-text">
+        握り方
+        <span class="require-text">必須</span>
+      </div>
+    </div>
+    <%= f.collection_select(:grip_type_id, GripType.all, :id, :name, {}, {class:"mouse-grip"}) %>
+
+    <div class="review-summery">
+      <div class="weight-bold-text">
+        使用したゲーム
+        <span class="require-text">必須</span>
+      </div>
+    </div>
+    <%= f.collection_select(:play_game_id, PlayGame.all, :id, :name, {}, {class:"mouse-playgame"}) %>
+
+    <div class="review-summery">
+      <div class="weight-bold-text">
+        評価（1~5の数字で評価:1が最低、5が最高）
+        <span class="require-text">必須</span>
+      </div>
+    </div>
+    <%= f.number_field :rating, min: 1, max: 5 %>
+
+    <div class="review-summery">
+      <div class="weight-bold-text">
+        使用感
+        <span class="require-text">必須</span>
+      </div>
+    </div>
+    <%= f.text_area :usability, placeholder: "使った感想" %>
+
+    <%= f.hidden_field :mouse_id, value: @mouse.id %>
+
+    <div class="send-btn">
+    <%= f.submit '投稿する' %>
+    </div>
+  <% end %>
+<% end %>
 </div>
