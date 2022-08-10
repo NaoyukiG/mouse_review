@@ -14,10 +14,10 @@ class MouseMid
   end
 
   #review_mouseモデルのバリデーション
-  validates :mouse_id
+  validates :mouse_id, presence: true
 
   def save
-    review_mouse = Review.create(grip_type_id: grip_type_id, play_game_id: play_game_id, rating: rating, usability: usability, user_id: current_user.id)
+    review_mouse = Review.create(grip_type_id: grip_type_id, play_game_id: play_game_id, rating: rating, usability: usability, user_id: user_id)
     ReviewMouse.create(mouse_id: mouse_id, review_id: review_mouse.id)
   end
 end

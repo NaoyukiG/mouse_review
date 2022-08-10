@@ -56,7 +56,7 @@
 
 <div class="review-form">
   <h2>マウスレビューの投稿</h2>
-  <%= form_with model: @review, url: reviews_path, local: true do |f|%>
+  <%= form_with model: @mouse_mid, url: reviews_path, local: true do |f|%>
 
     <div class="review-summery">
       <div class="weight-bold-text">
@@ -90,7 +90,6 @@
     </div>
     <%= f.text_area :usability, placeholder: "使った感想" %>
 
-    <%= binding.pry %>
     <%= f.hidden_field :mouse_id, :value => @mouse.id %>
 
     <div class="send-btn">
