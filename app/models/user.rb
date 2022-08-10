@@ -11,6 +11,6 @@ class User < ApplicationRecord
     validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: "is invalid. Input half-width characters.", allow_blank: true}
   end
 
-  #validates :admin, exclusion: {in: [true], message: "is invalid value entered"}
+  validates :admin, exclusion: {in: [true], message: "is invalid value entered"}
 
 end
