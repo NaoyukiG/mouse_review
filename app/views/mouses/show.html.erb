@@ -54,6 +54,20 @@
   <% end %>
 </div>
 
+<div class="review-index">
+  <h2>マウスレビュー一覧</h2>
+  <div class="reviews">
+    <ul>
+      <% @reviews.each do |review|%>
+      <li>
+        
+        <%= review.usability %>
+      <li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 <div class="review-form">
 <%if user_signed_in? && current_user.admin == false %>
   <h2>マウスレビューの投稿</h2>
