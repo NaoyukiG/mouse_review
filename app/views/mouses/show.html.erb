@@ -54,6 +54,50 @@
   <% end %>
 </div>
 
+<div class="review-index">
+  <h2>マウスレビュー一覧</h2>
+  <div class="reviews">
+    <ul>
+      <% @reviews.each do |review|%>
+      <li>
+        <div class="mouse-posted-review">
+          <%= review.user.nickname %>さんのレビュー
+        </div>
+
+        <div class="mouse-posted-review">
+          <%= review.rating %>点
+        </div>
+
+        <div class="mouse-posted-review">
+          <div class="weight-bold-text">
+          握り方：<%= review.grip_type.name %>
+          </div>
+        </div>
+
+        <% if review.user.hand_size.present?%>
+        <div class="mouse-posted-review">
+          手の大きさ：<%= review.user.hand_size %>cm
+        </div>
+        <% end %>
+
+        <div class="mouse-posted-review">
+          <div class="weight-bold-text">
+          使用したゲーム：<%= review.play_game.name %>
+          </div>
+        </div>
+
+        <div class="mouse-posted-review">
+          <div class="weight-bold-text">
+          感想：
+          </div>
+          <%= review.usability %>
+        </div>
+      <li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 <div class="review-form">
 <%if user_signed_in? && current_user.admin == false %>
   <h2>マウスレビューの投稿</h2>
