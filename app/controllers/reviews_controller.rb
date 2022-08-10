@@ -12,6 +12,15 @@ class ReviewsController < ApplicationController
     end
   end
   
+  def destroy
+    review = Review.find(params[:id])
+    if current_user.id == review.user_id
+      review.destroy
+      redirect_to 
+    else
+      render template: "mouses/show"
+    end
+  end
 
   private
   def review_params

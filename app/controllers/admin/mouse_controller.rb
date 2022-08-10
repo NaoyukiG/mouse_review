@@ -35,7 +35,7 @@ class Admin::MouseController < ApplicationController
       mouse.destroy
       redirect_to root_path
     else
-      render template: "mouses/show"
+      render template: "mouses/index"
     end
   end
 
