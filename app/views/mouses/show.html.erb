@@ -55,6 +55,7 @@
 </div>
 
 <div class="review-form">
+<%if user_signed_in? && current_user.admin == false %>
   <h2>マウスレビューの投稿</h2>
   <%= form_with model: @mouse_mid, url: reviews_path, local: true do |f|%>
 
@@ -90,10 +91,11 @@
     </div>
     <%= f.text_area :usability, placeholder: "使った感想" %>
 
-    <%= f.hidden_field :mouse_id, :value => @mouse.id %>
+    <%= f.hidden_field :mouse_id, value: @mouse.id %>
 
     <div class="send-btn">
     <%= f.submit '投稿する' %>
     </div>
-  <% end%>
+  <% end %>
+<% end %>
 </div>

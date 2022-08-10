@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :if_admin
 
   def create
     @mouse_mid = MouseMid.new(review_params)
@@ -15,5 +16,9 @@ class ReviewsController < ApplicationController
   private
   def review_params
     params.require(:mouse_mid).permit(:grip_type_id, :play_game_id, :rating, :usability).merge(user_id: current_user.id, mouse_id: params[:mouse_mid][:mouse_id])
+  end
+
+  def if_admin
+    redirect_to root_path if current_user.admin?
   end
 end
