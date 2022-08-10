@@ -7,6 +7,7 @@ class MousesController < ApplicationController
   
   def show
     @mouse = Mouse.find(params[:id])
+    @review = Review.new
   end
   
 end
