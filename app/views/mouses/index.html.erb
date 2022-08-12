@@ -1,25 +1,37 @@
 <%= render 'share/header' %>
 
-<h1>マウスを表示するページです</h1>
+<div class="index-main-image">
+  <%= image_tag 'Top-page.png', class:"top-image"%>
+  <p class="catch-copy"><b>Aim With Devise</b></p>
+  <p class="catch-copy-sub"><b>~エイムはデバイスから~</b></p>
+</div>
 
-<div class="mice">
-  <ul>マウス一覧
-    <% @mice.each do |mouse| %>
-      <li>
-        <%= link_to  mouse_path(mouse.id) do %>
-          <div class="mouse-detail">
-            <%= image_tag mouse.image.variant(resize: '300x200'), class:"image_tag" %>
-          </div>
+<div class="index-main">
+  <h1>マウスを表示するページです</h1>
 
-          <div class="mouse-detail">
-            <td><%= mouse.name %></td>
-          </div>
+  <div class="mice">
+    <ul>マウス一覧
+      <% @mice.each do |mouse| %>
+        <li>
+          <%= link_to  mouse_path(mouse.id) do %>
+            <div class="mouse-overview">
+              <div class="mouse-image-detail">
+                <%= image_tag mouse.image.variant(resize: '300x200'), class:"image_tag" %>
+              </div>
 
-          <div class="mouse-detail">
-            <td><%= mouse.maker.name %></td>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+              <div class="mouse-name-maker">
+                <div class="mouse-name-text">
+                  <td><%= mouse.name %></td>
+                </div>
+
+                <div class="mouse-maker-text">
+                  <td><%= mouse.maker.name %></td>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

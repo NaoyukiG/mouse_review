@@ -1,0 +1,26 @@
+.mouse-details{
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mouse-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-index{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-form{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

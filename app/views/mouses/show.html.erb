@@ -4,7 +4,7 @@
 
 <div class="mice">
   <h2>マウス概要</h2>
-      
+      <div class="mouse-details">
         <div class="mouse-detail-image">
           <%= image_tag @mouse.image.variant(resize: '300x200'), class:"image_tag" %>
         </div>
@@ -45,6 +45,7 @@
             <td>購入サイトのURL：<%= @mouse.order_url %></td>
           </div>
         </div>
+      </div>
 </div>
 
 <div class="mouse-editer">
@@ -55,7 +56,7 @@
 </div>
 
 <div class="review-index">
-  <h2>マウスレビュー一覧</h2>
+  <h2><b>マウスレビュー一覧</b></h2>
   <div class="reviews">
     <ul>
       <% @reviews.each do |review|%>
@@ -104,7 +105,7 @@
 
 <div class="review-form">
 <%if user_signed_in? && current_user.admin == false %>
-  <h2>マウスレビューの投稿</h2>
+  <h2><b>マウスレビューの投稿</b></h2>
   <%= form_with model: @mouse_mid, url: reviews_path, local: true do |f|%>
 
     <div class="review-summery">
