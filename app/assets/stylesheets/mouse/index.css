@@ -1,0 +1,53 @@
+.index-main-image{
+  width: 1366px;
+}
+
+.top-image{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  opacity: 30%;
+  position: relative;
+}
+
+.catch-copy{
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  font-size: 30px;
+}
+
+.catch-copy-sub{
+  position: absolute;
+  top: 250px;
+  left: 550px;
+  font-size: 30px;
+}
+
+.index-main {
+  width: 1366px;
+  height: 100%;
+}
+
+.mice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mouse-overview{
+  width: 700px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 5px;
+  display: flex;
+  background-color: white;
+}
+
+.mouse-name-maker{
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
