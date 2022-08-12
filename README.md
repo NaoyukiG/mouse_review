@@ -32,7 +32,7 @@ Things you may want to cover:
 | admin              | boolean | default: false            |
 
 ## Association
-- has_many :mouses
+- has_many :mice
 - has_many :reviews
 
 # miceテーブル
