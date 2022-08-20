@@ -106,7 +106,7 @@
 <div class="review-form">
 <%if user_signed_in? && current_user.admin == false %>
   <h2><b>マウスレビューの投稿</b></h2>
-  <%= form_with model: @mouse_mid, url: reviews_path, local: true do |f|%>
+  <%= form_with model: @review, url: reviews_path, local: true do |f|%>
 
     <div class="review-summery">
       <div class="weight-bold-text">
