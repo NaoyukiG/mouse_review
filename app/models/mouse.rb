@@ -7,8 +7,7 @@ class Mouse < ApplicationRecord
   has_one_attached :image
   
   belongs_to :user
-  has_many :review_mouses, dependent: :destroy
-  has_many :reviews, through: :review_mouses, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   with_options presence: true do
     validates :name
