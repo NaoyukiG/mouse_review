@@ -6,6 +6,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.integer :rating,       null: false, default: 0
       t.text :usability,       null: false
       t.references :user,      null: false, foreign_key: true
+      t.references :mouse,     null: false, foreign_key: true
       t.timestamps
     end
   end
