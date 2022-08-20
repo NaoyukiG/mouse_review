@@ -8,7 +8,7 @@ class MousesController < ApplicationController
   def show
     @mouse = Mouse.find(params[:id])
     @reviews = @mouse.reviews.includes(:mouses).order("created_at DESC")
-    @mouse_mid = MouseMid.new
+    @mouse_mid = Review.new
   end
   
 end
